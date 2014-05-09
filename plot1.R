@@ -23,9 +23,9 @@ load_nrow <- which.max(hpower1col$Date == "2007-02-03") - which.max(hpower1col$D
 # Load the file with only the required dates
 hpower <- read.table("household_power_consumption.txt", header=TRUE, sep=";", skip=load_skip, nrows=load_nrow)
 names(hpower) <- names(hpower1row)
+names(hpower)[2] <- "DateTime"
+hpower[,2] <- as.POSIXct(paste(hpower[,1], hpower[,2]), format = "%d/%m/%Y %H:%M:%S")
 hpower[,1] <- as.Date(hpower[,1], format="%d/%m/%Y")
-hpower[,2]  <- as.POSIXct(hpower[,2], format="%H:%M:%S")
-hpower[,2]  <- as.numeric(hpower[,2]  - trunc(hpower[,2] , units="days"))
 
 # clean up the temporary variables used for calclating the time frame
 rm(hpower1row)
@@ -36,6 +36,7 @@ rm(load_nrow)
 
 
 ## Part 2: plot the diagram
+# Plot the histogram to show the frequency of Global Active Power (kilowatts) values
 png("plot1.png", width = 480, height = 480)
 hist(as.numeric(hpower$Global_active_power), col="red", main = "Global Active Power",xlab="Global Active Power (kilowatts)")
 dev.off()

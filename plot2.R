@@ -38,7 +38,7 @@ rm(load_nrow)
 ## Part 2: plot the diagram
 # Plot to show the Global Active Power (kilowatts) vs. date & time
 png("plot2.png", width = 480, height = 480)
-plot(hpower$DateTime, as.numeric(hpower$Global_active_power), type="l", ylab="Global Active Power (kilowatts)", xlab="")
+plot(hpower$DateTime, hpower$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 dev.off()
 
 

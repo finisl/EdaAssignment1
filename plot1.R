@@ -38,7 +38,7 @@ rm(load_nrow)
 ## Part 2: plot the diagram
 # Plot the histogram to show the frequency of Global Active Power (kilowatts) values
 png("plot1.png", width = 480, height = 480)
-hist(as.numeric(hpower$Global_active_power), col="red", main = "Global Active Power",xlab="Global Active Power (kilowatts)")
+hist(hpower$Global_active_power, col="red", main = "Global Active Power",xlab="Global Active Power (kilowatts)")
 dev.off()
 
 

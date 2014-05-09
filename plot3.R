@@ -38,9 +38,9 @@ rm(load_nrow)
 ## Part 2: plot the diagram
 # Plot to energy sub-metering 3 sets of values vs. date & time
 png("plot3.png", width = 480, height = 480)
-plot(hpower$DateTime, as.numeric(hpower$Sub_metering_1), type="l", ylab="Energy Submetering", xlab="")
-lines(hpower$DateTime, as.numeric(hpower$Sub_metering_2), type="l", col="red")
-lines(hpower$DateTime, as.numeric(hpower$Sub_metering_3), type="l", col="blue")
+plot(hpower$DateTime, hpower$Sub_metering_1, type="l", ylab="Energy Submetering", xlab="")
+lines(hpower$DateTime, hpower$Sub_metering_2, type="l", col="red")
+lines(hpower$DateTime, hpower$Sub_metering_3, type="l", col="blue")
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd =3, col=c("black", "red", "blue"))
 dev.off()
 

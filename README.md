@@ -1,4 +1,4 @@
-## Introduction
+## Overview
 
 This assignment uses data from the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine Learning Repository</a>. In particular, the "Individual household electric power consumption Data Set" is used:
 
